@@ -5,6 +5,8 @@ import { AddActions, RemoveActions } from './actions/MotoActions'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
+import motoIcono from './images/motoIcono.png';
+import { CardMedia } from '@mui/material';
 
 function App() {
 
@@ -56,12 +58,20 @@ function App() {
           </Grid>
         </Grid>
         </form>
+
         <ul className='contenedorItems'>
           {
             motos && 
               motos.map((element) => (
               <li key={element.id} className='item'>
-                <span className='itemLabel'>{element.moto}</span>
+                <span className='itemLabel'>{element.moto.length > 15? element.moto.substr(0,12) + '...' : element.moto }</span>
+                <CardMedia
+                    sx={{ maxWidth: 50, maxHeight: 50 }}
+                    component="img"
+                    height="50"
+                    className="background"
+                    image={motoIcono}
+                  />
                 <Button 
                   variant="contained"
                   color="error"

@@ -43,6 +43,13 @@ body {
 }
 
 .itemLabel {
-  text-align: left;
+  text-align: center;
   flex: 1;
+}
+
+.background {
+  position:fixed; 
+  z-index:1; 
+  width:50%; 
+  height:50%;
 }
